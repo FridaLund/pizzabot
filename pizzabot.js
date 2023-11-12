@@ -1,23 +1,37 @@
-const vegetarian = "Vegetarian Pizza";
-const hawaiian = "Hawaiian Pizza";
-const pepperoni = "Pepperoni Pizza";
+const vegetarian = "Vegetariana";
+const hawaiian = "Hawaii";
+const pepperoni = "Pepperoni";
 
 const pizzaPrice = 80;
 
-function checkOrderName(orderName) {}
-
-function totalCost(orderPrice) {
-  return orderPrice * pizzaPrice;
+function totalCost(orderQuantity) {
+  return orderQuantity * pizzaPrice;
 }
 
-function cookingTime(orderTime) {}
+function cookingTime(orderQuantity) {
+  if (orderQuantity >= 1 && orderQuantity <= 2) {
+    return 10;
+  } else if (orderQuantity >= 3 && orderQuantity <= 5) {
+    return 15;
+  } else {
+    return 20;
+  }
+}
 
-function orderPizza(pizzaOrder) {
-  alert(
-    "Hey! Happy to serve your pizza. On our menu we have: " +
-      vegetarian +
-      hawaiian +
-      pepperoni
-  );
-  prompt("Enter the name of the pizza you want to order today");
+function orderPizza() {
+  const pizzaTypeElement = document.getElementById("pizzaType");
+  const pizzaType = pizzaTypeElement.value;
+
+  const quantityElement = document.getElementById("quantity");
+  const quantity = quantityElement.value;
+
+  const orderTextElement = document.getElementById("orderText");
+  orderTextElement.innerText =
+    "Fantastic! I'll get started on your " +
+    pizzaType +
+    ". It will cost " +
+    totalCost(quantity) +
+    " and it's going to take " +
+    cookingTime(quantity) +
+    " minutes. Thank you for your purcase!";
 }

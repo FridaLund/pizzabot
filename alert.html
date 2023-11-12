@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const vegetarian = "Vegetariana";
+      const hawaiian = "Hawaii";
+      const pepperoni = "Pepperoni";
+
+      const pizzaPrice = 80;
+
+      alert(
+        "Hey! Happy to serve your pizza. On our menu we have: " +
+          vegetarian +
+          ", " +
+          hawaiian +
+          " and " +
+          pepperoni +
+          "."
+      );
+
+      const orderName = prompt("What pizza do you want to order today?");
+
+      if (
+        orderName == vegetarian ||
+        orderName == hawaiian ||
+        orderName == pepperoni
+      ) {
+        const orderQuantity = prompt("How many " + orderName + " do you want?");
+
+        const orderTotal = orderQuantity * pizzaPrice;
+
+        let cookingTime;
+        if (orderQuantity >= 1 && orderQuantity <= 2) {
+          cookingTime = 10;
+        } else if (orderQuantity >= 3 && orderQuantity <= 5) {
+          cookingTime = 15;
+        } else {
+          cookingTime = 20;
+        }
+
+        alert(
+          "Fantastic! I'll get started on your " +
+            orderName +
+            ". It will cost " +
+            orderTotal +
+            " and it's going to take " +
+            cookingTime +
+            " minutes. Thank you for your purcase!"
+        );
+      } else {
+        alert("Sorry, that pizza is not on the menu.");
+      }
+    </script>
+  </body>
+</html>

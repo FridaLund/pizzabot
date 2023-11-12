@@ -3,10 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="pizzabot.js"></script>
     <title>Pizzabot</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Welcome to Pizzabot!</h1>
+    <header>Welcome to Pizzabot-teria!</header>
+
+    <label for="pizzaType">Available pizzas:</label>
+    <select name="pizzaType" id="pizzaType" required>
+      <option value="">Choose your pizza:</option>
+      <option value="hawaiian">Hawaii</option>
+      <option value="vegetarian">Vegetariana</option>
+      <option value="pepperoni">Pepperoni</option>
+    </select>
+
+    <label for="quantity">How many?</label>
+    <input type="number" id="quantity" name="quantity" min="1" required />
+
+    <div id="orderText"></div>
+
+    <button type="button" onclick="orderPizza()">Place order!</button>
+
+    <script src="pizzabot.js"></script>
   </body>
 </html>
